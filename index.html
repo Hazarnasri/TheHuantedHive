@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlRoot">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>[Project Name] - Hackathon Starter</title>
+      <meta name="description" content="A simple, customizable landing page starter for your next project.">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/all.min.css">
+      <link rel="stylesheet" href="css/style.css">
+   </head>
+   <body>
+      <div class="halloween-defs" aria-hidden="true">
+         <svg xmlns="http://www.w3.org/2000/svg" focusable="false">
+            <defs>
+               <linearGradient id="h-ghost" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#fff"/>
+                  <stop offset="1" stop-color="#c9b7ff"/>
+               </linearGradient>
+               <linearGradient id="h-pumpkin" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#ffb347"/>
+                  <stop offset=".55" stop-color="#ff762f"/>
+                  <stop offset="1" stop-color="#c53c18"/>
+               </linearGradient>
+               <symbol id="h-bat" viewBox="0 0 120 90">
+                  <path d="M60 38c-8-10-18-12-27-10-11-7-20-15-29-22 3 17 3 30 10 40-3 7-3 14-2 20 9-1 17-5 22-12 5 5 11 8 18 9l8 16 8-16c7-1 13-4 18-9 5 7 13 11 22 12 1-6 1-13-2-20 7-10 7-23 10-40-9 7-18 15-29 22-9-2-19 0-27 10z" fill="#181324" stroke="#8061bd" stroke-width="2.5" stroke-linejoin="round"/>
+                  <circle cx="52" cy="47" r="2.5" fill="#ff9b4a"/><circle cx="68" cy="47" r="2.5" fill="#ff9b4a"/>
+               </symbol>
+               <symbol id="h-ghost-icon" viewBox="0 0 100 110">
+                  <path d="M15 91V47C15 25 30 10 50 10s35 15 35 37v44c0 4-4 6-8 3l-9-7-9 9-9-9-9 9-9-9-9 7c-4 3-8 1-8-3z" fill="url(#h-ghost)" stroke="#fff" stroke-width="2"/>
+                  <ellipse cx="38" cy="49" rx="4" ry="7" fill="#33234c"/><ellipse cx="62" cy="49" rx="4" ry="7" fill="#33234c"/>
+                  <path d="M46 63q4 4 8 0" fill="none" stroke="#7d5fc2" stroke-width="3" stroke-linecap="round"/>
+               </symbol>
+               <symbol id="h-pumpkin-icon" viewBox="0 0 100 100">
+                  <path d="M49 20c-1-7 2-12 9-16 2 7 0 12-6 17" fill="none" stroke="#7b9c43" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M50 23c-8-9-18-6-22 1-13-4-21 9-21 30 0 24 12 37 43 37s43-13 43-37c0-21-8-34-21-30-4-7-14-10-22-1z" fill="url(#h-pumpkin)" stroke="#ffbd69" stroke-width="2"/>
+                  <path d="m28 43 15 7-14 7zm44 0-15 7 14 7zm-22 11-5 9h10z" fill="#351523"/>
+                  <path d="M33 68c5-4 10 3 16 0s11 3 18 0l-4 10-8-4-6 5-7-5-7 3z" fill="#351523" stroke="#ffcf78" stroke-width="1.5" stroke-linejoin="round"/>
+               </symbol>
+               <symbol id="h-web" viewBox="0 0 120 120">
+                  <path d="M4 4 116 116M4 4v112M4 4h112M4 4l112 32M4 4l32 112m-32-86 86 86m-86-56 56 56m-56-27 27 27M4 30l30-1 1-25m-31 55 55 1 1-55m-56 82 82 1 1-83m-83 109 108 1 1-108" fill="none" stroke="#b8a4eb" stroke-opacity=".43" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+               </symbol>
+            </defs>
+         </svg>
+      </div>
+
+      <div id="landing">
+         <nav id="nbar" aria-label="Main navigation">
+            <div class="container">
+               <div class="d-flex align-items-center justify-content-between w-100">
+                  <a href="#hero" class="d-flex align-items-center gap-2 project-brand">
+                     <span class="logo-i"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>
+                     <span>[Project Name]</span>
+                  </a>
+                  <div class="desktop-nav d-none d-md-flex align-items-center gap-1">
+                     <a href="#about" class="nav-link">About</a>
+                     <a href="#features" class="nav-link">Features</a>
+                  </div>
+                  <div class="nav-auth d-flex align-items-center gap-2">
+                     <button type="button" class="boc btn px-3 py-2 login-trigger d-none d-sm-inline-flex" data-auth-open="login">Log in</button>
+                     <button type="button" class="bgrd btn px-3 py-2 register-trigger" data-auth-open="register">Register</button>
+                  </div>
+                  <button class="boc mobile-nav-toggle d-md-none px-2 py-2" id="mbtog" aria-label="Open navigation" aria-expanded="false" aria-controls="mbmenu">
+                     <i class="fa-solid fa-bars" id="barIcon" aria-hidden="true"></i>
+                     <i class="fa-solid fa-xmark" id="xIcon" aria-hidden="true" style="display:none"></i>
+                  </button>
+               </div>
+            </div>
+         </nav>
+         <div id="mbmenu">
+            <a href="#about" class="nav-link d-block py-3 border-bottom">About</a>
+            <a href="#features" class="nav-link d-block py-3">Features</a>
+            <div class="d-flex gap-2 mt-3">
+               <button type="button" class="boc btn flex-fill py-2" data-auth-open="login">Log in</button>
+               <button type="button" class="bgrd btn flex-fill py-2" data-auth-open="register">Register</button>
+            </div>
+         </div>
+
+         <main>
+            <section id="hero" class="minimal-section">
+               <span class="halloween-decor hallow-web hallow-web-tl" aria-hidden="true"><svg viewBox="0 0 120 120"><use href="#h-web"></use></svg></span>
+               <div class="aur aur-a" aria-hidden="true"></div>
+               <span class="halloween-decor hallow-bat hallow-hero-bat" aria-hidden="true"><svg viewBox="0 0 120 90"><use href="#h-bat"></use></svg></span>
+               <div class="container position-relative">
+                  <div class="row align-items-center g-5">
+                     <div class="col-lg-7">
+                  <div class="hero-copy text-center text-lg-start mx-auto">
+                     <span class="hbadge"><span class="bdot"></span>Your next idea starts here</span>
+                     <h1 class="h1">Build your own<br><span class="gt">IDEA</span></h1>
+                     <p class="hero-description mx-auto mx-lg-0">[Describe Your Idea] - a simple starting point for turning your project idea into something real.</p>
+                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-3 flex-wrap">
+                        <a href="#about" class="bgrd btn px-4 py-3 fs-6">Explore the idea <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                        <button type="button" class="boc btn px-4 py-3 fs-6" data-auth-open="register">Register</button>
+                     </div>
+                  </div>
+                     </div>
+                     <div class="col-lg-5">
+                        <img src="img/pics/Mike.png" class="hero-image" alt="Project mascot illustration">
+                     </div>
+                  </div>
+               </div>
+            </section>
+
+            <section id="about" class="sp minimal-section about-section">
+               <span class="halloween-decor hallow-web hallow-web-tr" aria-hidden="true"><svg viewBox="0 0 120 120"><use href="#h-web"></use></svg></span>
+               <div class="container">
+                  <div class="about-copy mx-auto text-center rv">
+                     <span class="slbl">About the Idea</span>
+                     <h2 class="stitle">A small idea can<br><span class="gt">make a difference.</span></h2>
+                     <p class="ssub mx-auto">[Project Name] is a place to explain the challenge you care about, who it helps, and what you hope to create.</p>
+                  </div>
+               </div>
+            </section>
+
+            <section id="features" class="sp minimal-section features-section">
+               <div class="container">
+                  <div class="text-center mb-5 rv">
+                     <span class="slbl">Features</span>
+                     <h2 class="stitle">What makes it <span class="gt">yours?</span></h2>
+                     <p class="ssub mx-auto">Share a few simple ways your idea helps people.</p>
+                  </div>
+                  <div class="row g-3 justify-content-center">
+                     <div class="col-md-4 rv">
+                        <article class="gc p-4 h-100 feature-card">
+                           <div class="ftico"><i class="fa-regular fa-lightbulb" aria-hidden="true"></i></div>
+                           <h3 class="fs-5 fw-semibold mb-2">[Feature One]</h3>
+                           <p class="feature-description">[A short description of what this feature does.]</p>
+                        </article>
+                     </div>
+                     <div class="col-md-4 rv" style="transition-delay:.08s">
+                        <article class="gc p-4 h-100 feature-card">
+                           <div class="ftico"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
+                           <h3 class="fs-5 fw-semibold mb-2">[Feature Two]</h3>
+                           <p class="feature-description">[Explain how this makes the experience better.]</p>
+                        </article>
+                     </div>
+                     <div class="col-md-4 rv" style="transition-delay:.16s">
+                        <article class="gc p-4 h-100 feature-card">
+                           <div class="ftico"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
+                           <h3 class="fs-5 fw-semibold mb-2">[Feature Three]</h3>
+                           <p class="feature-description">[Add another useful capability or remove this card.]</p>
+                        </article>
+                     </div>
+                  </div>
+               </div>
+            </section>
+
+            <section id="cta" class="minimal-section">
+               <span class="halloween-decor hallow-pumpkin hallow-cta-pumpkin" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#h-pumpkin-icon"></use></svg></span>
+               <div class="container position-relative">
+                  <div class="cta-copy mx-auto text-center rv">
+                     <span class="slbl">Your next step</span>
+                     <h2 class="stitle">Ready to bring<br><span class="gt">your idea to life?</span></h2>
+                     <p class="ssub mx-auto">[Your Call to Action]</p>
+                     <a href="#hero" class="bgrd btn px-4 py-3 fs-6">Get Started <i class="fa-solid fa-arrow-up ms-2" aria-hidden="true"></i></a>
+                  </div>
+               </div>
+            </section>
+         </main>
+
+         <dialog id="authDialog" class="auth-dialog" aria-labelledby="authTitle">
+            <div class="auth-panel">
+               <div class="auth-heading">
+                  <div>
+                     <span class="slbl">Welcome</span>
+                     <h2 id="authTitle" class="auth-title">Your project workspace</h2>
+                  </div>
+                  <button type="button" class="boc auth-close" id="authClose" aria-label="Close login and registration"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+               </div>
+               <div class="auth-tabs" role="tablist" aria-label="Account options">
+                  <button type="button" class="auth-tab active" id="loginTab" role="tab" aria-selected="true" aria-controls="loginForm" data-auth-tab="login">Log in</button>
+                  <button type="button" class="auth-tab" id="registerTab" role="tab" aria-selected="false" aria-controls="registerForm" data-auth-tab="register">Register</button>
+               </div>
+               <p class="auth-note">Demo forms only. Connect your own authentication service to create or access accounts.</p>
+               <form id="loginForm" class="auth-form" aria-labelledby="loginTab">
+                  <label for="loginEmail">Email address</label>
+                  <input id="loginEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                  <label for="loginPassword">Password</label>
+                  <input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Your password" required>
+                  <button type="submit" class="bgrd btn w-100 py-3">Log in</button>
+               </form>
+               <form id="registerForm" class="auth-form" aria-labelledby="registerTab" hidden>
+                  <label for="registerName">Your name</label>
+                  <input id="registerName" name="name" type="text" autocomplete="name" placeholder="[Your Name]" required>
+                  <label for="registerEmail">Email address</label>
+                  <input id="registerEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                  <label for="registerPassword">Password</label>
+                  <input id="registerPassword" name="password" type="password" autocomplete="new-password" placeholder="Choose a password" required>
+                  <button type="submit" class="bgrd btn w-100 py-3">Create demo account</button>
+               </form>
+               <p class="auth-status" id="authStatus" role="status" aria-live="polite"></p>
+            </div>
+         </dialog>
+
+         <footer id="foot">
+            <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+               <a href="#hero" class="project-brand">[Project Name]</a>
+               <p class="footer-note mb-0">Built by [Your Team]</p>
+            </div>
+         </footer>
+      </div>
+      <script src="js/main.js"></script>
+   </body>
+</html>
